@@ -56,7 +56,8 @@ class KriteriaController extends Controller
         $kriteria = Kriteria::findOrFail($id_kriteria);
         $kriteria->update($validatedData);
 
-        return redirect('/kriteria')->with('success', 'Berhasil mengupdate kriteria.');
+        Alert::toast('Data kriteria berhasil diubah', 'success');
+        return redirect('/kriteria');
     }
 
     public function destroy($id_kriteria)
