@@ -62,6 +62,6 @@ class KriteriaController extends Controller
         $kriteria = Kriteria::findOrFail($id_kriteria);
         $kriteria->delete();
 
-        return redirect()->route('admin.kriteria.index')->with('success', 'Kriteria deleted successfully.');
+        return redirect('/kriteria')->with('success', 'Kriteria berhasil dihapus.');
     }
 }

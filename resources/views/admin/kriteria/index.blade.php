@@ -31,25 +31,22 @@
                 </tbody>
                 @else
                 <tbody>
-                    @php
-                    $i = 1;
-                    $id_kriteria = 'id_kriteria';
-                    @endphp
                     @foreach ($kriterias as $item)
                     <tr>
-                        <td class="text-center align-middle">{{ $i++ }}</td>
+                        <td class="text-center align-middle">{{ $loop->iteration }}</td>
                         <td class="align-middle">{{ $item->nama_kriteria }}</td>
                         <td class="align-middle">{{ $item->bobot }}</td>
                         <td class="align-middle">{{ $item->jenis_kriteria }}</td>
                         <td class="right aligned collapsing">
                             <div class="d-flex flex-column flex-sm-row justify-content-center">
-                                <a href="/kriteria/{{ $item->$id_kriteria }}" class="btn btn-sm btn-warning mr-1"><i class="fas fa-fw fa-pencil-alt text-white"></i></a>
-                                <a href="/kriteria/{{ $item->$id_kriteria }}" class="btn btn-sm btn-danger">
+                                <a href="/kriteria/{{ $item->id_kriteria }}" class="btn btn-sm btn-warning mr-1"><i class="fas fa-fw fa-pencil-alt text-white"></i></a>
+                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmationDelete-{{ $item->id_kriteria }}">
                                     <i class="fas fa-trash"></i>
-                                </a>
+                                </button>
                             </div>
                         </td>
                     </tr>
+                    @include('admin.kriteria.confirmation-delete', ['item' => $item])
                     @endforeach
                 </tbody>
                 @endif
