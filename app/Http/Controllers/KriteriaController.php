@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Kriteria; //
+use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class KriteriaController extends Controller
 {
@@ -31,7 +32,8 @@ class KriteriaController extends Controller
 
         Kriteria::create($validatedData);
 
-        return redirect('/kriteria')->with('success', 'Kriteria created successfully.');
+        Alert::success('Berhasil', 'Kriteria berhasil ditambahkan.');
+        return redirect('/kriteria');
     }
 
     public function edit($id_kriteria)
@@ -62,6 +64,7 @@ class KriteriaController extends Controller
         $kriteria = Kriteria::findOrFail($id_kriteria);
         $kriteria->delete();
 
-        return redirect('/kriteria')->with('success', 'Kriteria berhasil dihapus.');
+        Alert::success('Berhasil', 'Kriteria berhasil dihapus.');
+        return redirect('/kriteria');
     }
 }

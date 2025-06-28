@@ -16,6 +16,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('template/css/sb-admin-2.min.css') }}" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body id="page-top">
@@ -92,6 +93,7 @@
     <script src="{{ asset('template/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('template/js/demo/chart-pie-demo.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    @include('sweetalert::alert')
 </body>
 
 </html>
