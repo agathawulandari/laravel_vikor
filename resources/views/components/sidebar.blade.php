@@ -31,8 +31,8 @@
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link" href="">
+    <li class="nav-item {{ request()->is('subkriteria*') ? 'active' : '' }}">
+        <a class="nav-link" href="/subkriteria">
             <i class="fas fa-fw fa-cog"></i>
             <span>Sub Kriteria</span></a>
     </li>
